@@ -15,3 +15,6 @@ alias cd="z"
 alias ls="eza"
 alias ll="eza -lah"
 alias neo="neo-matrix -Dc cyan"
+alias clock="tty-clock -scC 4"
+
+fastfetch
