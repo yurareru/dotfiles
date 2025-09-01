@@ -1,0 +1,79 @@
+"$schema" = "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json"
+final_space = true
+version = 3
+console_title_template = "{{if eq .Folder .UserName }}{{ .HostName }}{{else}}{{ .Folder }}{{end}}"
+
+[palette]
+pink = "#F5C2E7"
+lavender = "#B4BEFE"
+blue = "#89B4FA"
+red = "#F38BA8"
+
+[[blocks]]
+alignment = "left"
+type = "prompt"
+newline = true
+
+    [[blocks.segments]]
+    type = "os"
+    style = "plain"
+    template = "{{.Icon}} "
+    foreground = "p:lavender"
+
+    [[blocks.segments]]
+    type = "session"
+    style = "plain"
+    template = "{{ .UserName }}@{{ .HostName }} "
+    foreground = "p:blue"
+
+    [[blocks.segments]]
+    type = "path"
+    style = "plain"
+    template = "{{ .Path }} "
+    foreground = "p:pink"
+
+        [blocks.segments.properties]
+        style = "full"
+
+    [[blocks.segments]]
+    type = "git"
+    style = "plain"
+    template = " {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <p:blue>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>"
+    foreground = "p:lavender"
+
+        [blocks.segments.properties]
+        branch_icon = " "
+        cherry_pick_icon = " "
+        commit_icon = " "
+        fetch_status = true
+        merge_icon = " "
+        no_commits_icon = " "
+        rebase_icon = " "
+        revert_icon = " "
+        tag_icon = " "
+    
+[[blocks]]
+type = "rprompt"
+overflow = "hidden"
+
+    [[blocks.segments]]
+    type = "executiontime"
+    style = "plain"
+    foreground = "p:blue"
+    template = "{{ .FormattedMs }}"
+
+        [blocks.segments.properties]
+        threshold = 1
+
+[[blocks]]
+type = "prompt"
+alignment = "left"
+newline = true
+
+    [[blocks.segments]]
+    type = "text"
+    style = "plain"
+    template = "❯"
+    foreground_templates = [ "{{if gt .Code 0}}p:red{{end}}", "{{if eq .Code 0}}p:lavender{{end}}" ]
+        
+
