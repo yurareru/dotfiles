@@ -21,6 +21,7 @@ path_prepend "$HOME/.local/share/pnpm" \
     "$HOME/.local/share/bob/nvim-bin" \
     "$HOME/.local/bin"
 
+export PNPM_HOME="$HOME/.local/share/pnpm"
 export EDITOR=$(which nvim)
 export VISUAL=$EDITOR
 
@@ -34,24 +35,27 @@ source "${ZINIT_HOME}/zinit.zsh"
 zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
 zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
+zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1a --color=always $realpath'
 
-autoload -Uz compinit && compinit
+autoload -U compinit; compinit
 
 zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions 
 zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light jeffreytse/zsh-vi-mode
+zinit light akash329d/zsh-alias-finder
+zinit light mattmc3/zsh-safe-rm
 
 zinit ice lucid wait
 zinit snippet OMZP::fzf
 zinit snippet OMZL::git.zsh
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
+zinit snippet OMZP::systemd
 zinit snippet OMZP::command-not-found
 
-alias neofetch=fastfetch
 alias ls=eza
 alias ll="eza -lah"
 alias neovide="neovide --neovim-bin $(which nvim)"
@@ -59,9 +63,7 @@ alias zshrc="${=EDITOR} ~/.zshrc"
 alias clear=" clear"
 alias exit=" exit"
 alias pwd=" pwd"
-alias rm="rm -iv"
-alias mv="rm -iv"
-alias cp="cp -iv"
+alias neofetch=" fastfetch"
 
 y() {
     local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd

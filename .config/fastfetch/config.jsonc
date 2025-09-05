@@ -1,0 +1,86 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    //"source": "arch_small",
+    "color": {
+      "1": "magenta",
+      "2": "magenta",
+    },
+  },
+  "display": {
+    "separator": " ",
+    "color": {
+      "keys": "magenta",
+      "output": "38;2;180;190;254",
+    },
+  },
+  "modules": [
+    {
+      "type": "title",
+      "color": {
+        "user": "magenta",
+        "host": "38;2;180;190;254",
+      },
+    },
+    {
+      "type": "separator",
+      "string": "─",
+    },
+    {
+      "type": "os",
+      "key": "{icon} ",
+    },
+    {
+      "type": "kernel",
+      "key": "{icon} ",
+    },
+    {
+      "type": "uptime",
+      "key": "{icon} ",
+    },
+    {
+      "type": "packages",
+      "key": "{icon} ",
+      "disabled": ["flatpak"],
+    },
+    {
+      "type": "terminal",
+      "key": "{icon} ",
+    },
+    {
+      "type": "shell",
+      "key": "{icon} ",
+    },
+    {
+      "type": "display",
+      "key": "{icon} ",
+      "format": "{width}x{height} @ {refresh-rate}Hz in {inch}\"",
+    },
+    {
+      "type": "wm",
+      "key": "{icon} ",
+      "format": "{process-name} {version}",
+    },
+    {
+      "type": "board",
+      "key": "{icon} ",
+      "format": "{name}",
+    },
+    {
+      "type": "cpu",
+      "key": "{icon} ",
+      "format": "{name} @ {freq-max}",
+    },
+    {
+      "type": "gpu",
+      "key": "{icon} ",
+      "format": "{name}",
+    },
+    {
+      "type": "memory",
+      "key": "󰑭 ",
+    },
+    "break",
+    "colors",
+  ],
+}

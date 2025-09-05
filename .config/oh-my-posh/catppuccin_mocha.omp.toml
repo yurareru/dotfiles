@@ -23,14 +23,13 @@ newline = true
     [[blocks.segments]]
     type = "session"
     style = "plain"
-    template = "{{ .UserName }}@{{ .HostName }} "
-    foreground = "p:blue"
+    template = "<p:pink>{{ .UserName }}</><>@</><p:lavender>{{ .HostName }} </>"
 
     [[blocks.segments]]
     type = "path"
     style = "plain"
     template = "{{ .Path }} "
-    foreground = "p:pink"
+    foreground = "p:blue"
 
         [blocks.segments.properties]
         style = "full"
@@ -76,4 +75,3 @@ newline = true
     template = "❯"
     foreground_templates = [ "{{if gt .Code 0}}p:red{{end}}", "{{if eq .Code 0}}p:lavender{{end}}" ]
         
-

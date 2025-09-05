@@ -1,0 +1,12 @@
+[general]
+lower_cutoff_freq = 40
+higher_cutoff_freq = 8000
+
+[output]
+channels = mono
+
+[color]
+foreground = "#f5c2e7"
+
+[smoothing]
+waves = 1

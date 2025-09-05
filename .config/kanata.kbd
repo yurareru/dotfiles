@@ -3,9 +3,9 @@
 )
 
 (defalias
-    escctrl (tap-hold 100 250 esc lctrl)
+    escsuper (tap-hold 100 250 esc lmet)
 )
 
 (deflayer base
-    @escctrl
+    @escsuper
 )
