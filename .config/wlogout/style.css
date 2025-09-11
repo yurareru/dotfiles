@@ -30,25 +30,29 @@ button:hover {
 }
 
 #lock {
-  background-image: url("/home/yurareru/.config/wlogout/icons/lock.svg");
+  border-radius: 10px 0 0 0;
+  background-image: url("./icons/lock.svg");
 }
 
 #logout {
-  background-image: url("/home/yurareru/.config/wlogout/icons/logout.svg");
+  background-image: url("./icons/logout.svg");
 }
 
 #suspend {
-  background-image: url("/home/yurareru/.config/wlogout/icons/suspend.svg");
+  border-radius: 0 10px 0 0;
+  background-image: url("./icons/suspend.svg");
 }
 
 #hibernate {
-  background-image: url("/home/yurareru/.config/wlogout/icons/hibernate.svg");
+  border-radius: 0 0 0 10px;
+  background-image: url("./icons/hibernate.svg");
 }
 
 #shutdown {
-  background-image: url("/home/yurareru/.config/wlogout/icons/shutdown.svg");
+  background-image: url("./icons/shutdown.svg");
 }
 
 #reboot {
-  background-image: url("/home/yurareru/.config/wlogout/icons/reboot.svg");
+  border-radius: 0 0 10px 0;
+  background-image: url("./icons/reboot.svg");
 }

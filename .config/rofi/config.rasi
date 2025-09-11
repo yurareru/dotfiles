@@ -1,7 +1,7 @@
 @theme "catppuccin"
 
 configuration {
-	modes: "drun,calc,emoji";
+    modes: "drun,calc,emoji";
 	font: "JetBrainsMono Nerd Font 12";
     show-icons: true;
     display-drun: " ";

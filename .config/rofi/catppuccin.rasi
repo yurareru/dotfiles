@@ -95,8 +95,9 @@ window {
     border-radius:    10px;
 }
 mainbox {
-    padding: 0;
-    border:  0;
+    padding:  0;
+    border:   0;
+    children: [ "inputbar", "message", "listview", "mode-switcher" ];
 }
 message {
     padding:      1px ;
@@ -130,19 +131,6 @@ button selected {
     background-color: @selected-normal-background;
     text-color:       @selected-normal-foreground;
 }
-num-filtered-rows {
-    expand:     false;
-    text-color: Gray;
-}
-num-rows {
-    expand:     false;
-    text-color: Gray;
-}
-textbox-num-sep {
-    expand:     false;
-    str:        "/";
-    text-color: Gray;
-}
 inputbar {
     background-color: @crust;
     border:           2px;
@@ -151,11 +139,7 @@ inputbar {
     padding:          10px;
     spacing:          5px;
     text-color:       @normal-foreground;
-    children:         [ "prompt","entry","num-filtered-rows","textbox-num-sep","num-rows","case-indicator" ];
-}
-case-indicator {
-    spacing:    0;
-    text-color: @normal-foreground;
+    children:         [ "prompt","entry" ];
 }
 entry {
     text-color:        @lavender;
@@ -167,7 +151,4 @@ entry {
 prompt {
     spacing:    0;
     text-color: @lavender;
-}
-textbox-prompt-colon {
-    expand:     false;
 }
