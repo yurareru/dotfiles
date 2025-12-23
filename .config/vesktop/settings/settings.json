@@ -19,7 +19,7 @@
             "enabled": true
         },
         "DynamicImageModalAPI": {
-            "enabled": true
+            "enabled": false
         },
         "MemberListDecoratorsAPI": {
             "enabled": true
@@ -59,9 +59,9 @@
         },
         "AnonymiseFileNames": {
             "enabled": true,
-            "anonymiseByDefault": false,
+            "anonymiseByDefault": true,
             "method": 0,
-            "randomisedLength": 7,
+            "randomisedLength": 16,
             "consistent": "image"
         },
         "AppleMusicRichPresence": {
@@ -92,13 +92,16 @@
             "enabled": false
         },
         "BetterSettings": {
-            "enabled": false
+            "enabled": false,
+            "disableFade": true,
+            "organizeMenu": true,
+            "eagerLoad": true
         },
         "BetterUploadButton": {
             "enabled": false
         },
         "BiggerStreamPreview": {
-            "enabled": false
+            "enabled": true
         },
         "BlurNSFW": {
             "enabled": false
@@ -108,7 +111,7 @@
             "format": "stopwatch"
         },
         "ClearURLs": {
-            "enabled": true
+            "enabled": false
         },
         "ClientTheme": {
             "enabled": false
@@ -117,7 +120,18 @@
             "enabled": false
         },
         "ConsoleJanitor": {
-            "enabled": false
+            "enabled": false,
+            "disableLoggers": false,
+            "disableSpotifyLogger": true,
+            "whitelistedLoggers": "GatewaySocket; Routing/Utils",
+            "allowLevel": {
+                "error": true,
+                "warn": false,
+                "trace": false,
+                "log": false,
+                "info": false,
+                "debug": false
+            }
         },
         "ConsoleShortcuts": {
             "enabled": false
@@ -164,7 +178,7 @@
             "enabled": false
         },
         "ExpressionCloner": {
-            "enabled": false
+            "enabled": true
         },
         "F8Break": {
             "enabled": false
@@ -188,7 +202,7 @@
             "enabled": false
         },
         "FixCodeblockGap": {
-            "enabled": false
+            "enabled": true
         },
         "FixImagesQuality": {
             "enabled": false
@@ -206,7 +220,7 @@
             "enabled": false
         },
         "FriendsSince": {
-            "enabled": false
+            "enabled": true
         },
         "FullSearchContext": {
             "enabled": false
@@ -216,7 +230,8 @@
         },
         "GameActivityToggle": {
             "enabled": true,
-            "oldIcon": false
+            "oldIcon": false,
+            "location": "PANEL"
         },
         "GifPaste": {
             "enabled": false
@@ -231,7 +246,14 @@
             "enabled": false
         },
         "IgnoreActivities": {
-            "enabled": false
+            "enabled": false,
+            "listMode": 0,
+            "idsList": "",
+            "ignorePlaying": false,
+            "ignoreStreaming": false,
+            "ignoreListening": false,
+            "ignoreWatching": false,
+            "ignoreCompeting": false
         },
         "ImageFilename": {
             "enabled": false
@@ -280,16 +302,16 @@
         },
         "MessageLogger": {
             "enabled": true,
-            "collapseDeleted": false,
             "deleteStyle": "text",
+            "logDeletes": true,
+            "collapseDeleted": false,
+            "logEdits": true,
+            "inlineEdits": true,
             "ignoreBots": false,
-            "ignoreSelf": false,
+            "ignoreSelf": true,
             "ignoreUsers": "",
             "ignoreChannels": "",
-            "ignoreGuilds": "",
-            "logEdits": true,
-            "logDeletes": true,
-            "inlineEdits": true
+            "ignoreGuilds": ""
         },
         "MessageTags": {
             "enabled": false
@@ -304,7 +326,7 @@
             "enabled": false
         },
         "NoDevtoolsWarning": {
-            "enabled": false
+            "enabled": true
         },
         "NoF1": {
             "enabled": false
@@ -331,7 +353,7 @@
             "enabled": false
         },
         "NoTypingAnimation": {
-            "enabled": false
+            "enabled": true
         },
         "NoUnblockToJump": {
             "enabled": false
@@ -377,10 +399,10 @@
         },
         "PlatformIndicators": {
             "enabled": true,
-            "colorMobileIndicator": true,
             "list": true,
             "badges": true,
-            "messages": false
+            "messages": false,
+            "colorMobileIndicator": true
         },
         "PreviewMessage": {
             "enabled": false
@@ -431,8 +453,7 @@
             "enabled": false
         },
         "ServerListIndicators": {
-            "enabled": false,
-            "mode": 2
+            "enabled": false
         },
         "ShikiCodeblocks": {
             "enabled": true,
@@ -551,7 +572,7 @@
         },
         "VolumeBooster": {
             "enabled": true,
-            "multiplier": 2
+            "multiplier": 3
         },
         "WebKeybinds": {
             "enabled": true
@@ -587,6 +608,15 @@
         },
         "WebContextMenus": {
             "enabled": true
+        },
+        "ContextMenuAPI": {
+            "enabled": true
+        },
+        "MenuItemDemanglerAPI": {
+            "enabled": true
+        },
+        "NoticesAPI": {
+            "enabled": true
         }
     },
     "notifications": {
@@ -599,6 +629,10 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1757489629788
+        "settingsSyncVersion": 1766219270882
+    },
+    "uiElements": {
+        "chatBarButtons": {},
+        "messagePopoverButtons": {}
     }
 }

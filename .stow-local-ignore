@@ -1,0 +1,6 @@
+.git
+.gitignore
+.gitmodules
+pacman.list
+aur.list
+export_packages.sh

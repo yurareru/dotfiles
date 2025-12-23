@@ -62,7 +62,7 @@ overflow = "hidden"
     template = "{{ .FormattedMs }}"
 
         [blocks.segments.properties]
-        threshold = 1
+        threshold = 10
 
 [[blocks]]
 type = "prompt"
@@ -75,3 +75,10 @@ newline = true
     template = "❯"
     foreground_templates = [ "{{if gt .Code 0}}p:red{{end}}", "{{if eq .Code 0}}p:lavender{{end}}" ]
         
+[transient_prompt]
+foreground_templates = [ "{{if gt .Code 0}}p:red{{end}}", "{{if eq .Code 0}}p:lavender{{end}}" ]
+template = "❯ "
+
+[secondary_prompt]
+foreground = "p:lavender"
+template = "❯❯ "

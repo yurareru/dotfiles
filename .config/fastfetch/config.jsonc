@@ -28,7 +28,7 @@
     },
     {
       "type": "os",
-      "key": "{icon} ",
+      "key": "󰣇 ",
     },
     {
       "type": "kernel",
@@ -41,7 +41,7 @@
     {
       "type": "packages",
       "key": "{icon} ",
-      "disabled": ["flatpak"],
+      "format": "{pacman}",
     },
     {
       "type": "terminal",
@@ -54,7 +54,7 @@
     {
       "type": "display",
       "key": "{icon} ",
-      "format": "{width}x{height} @ {refresh-rate}Hz in {inch}\" {is-primary}",
+      "format": "{width}x{height} @ {refresh-rate}Hz in {inch}\"",
     },
     {
       "type": "wm",
@@ -74,7 +74,8 @@
     {
       "type": "gpu",
       "key": "{icon} ",
-      "format": "{vendor} {name}",
+      "driverSpecific": true,
+      "format": "{name}",
     },
     {
       "type": "memory",

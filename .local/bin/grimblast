@@ -262,8 +262,10 @@ elif [ "$SUBJECT" = "area" ]; then
   fi
 
   if [ "$FREEZE" = "yes" ] && [ "$(command -v "hyprpicker")" ] >/dev/null 2>&1; then
+    hyprctl keyword decoration:rounding 0
     hyprpicker -r -z &
     sleep 0.2
+    hyprctl keyword decoration:rounding 12
   fi
 
   # disable animation for layer namespace "selection" (slurp)
@@ -280,13 +282,18 @@ elif [ "$SUBJECT" = "area" ]; then
 
   # Check if user exited slurp without selecting the area
   if [ -z "$GEOM" ]; then
-    killHyprpicker
-    GEOM=""
-    OUTPUT=$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .name')
-    WHAT="$OUTPUT (fallback)"
-  else
-    WHAT="Area"
+      killHyprpicker
+      exit 1
   fi
+  WHAT="Area"
+  # if [ -z "$GEOM" ]; then
+  #   killHyprpicker
+  #   GEOM=""
+  #   OUTPUT=$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .name')
+  #   WHAT="$OUTPUT (fallback)"
+  # else
+  #   WHAT="Area"
+  # fi
   wait
 elif [ "$SUBJECT" = "window" ]; then
   die "Subject 'window' is now included in 'area'"

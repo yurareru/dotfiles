@@ -6,13 +6,12 @@ path_prepend() {
 
 path_prepend "$HOME/.local/share/pnpm" \
     "$HOME/.local/share/bob/nvim-bin" \
-    "$HOME/.local/bin"
+    "$HOME/.local/bin" \
+    "$HOME/go/bin"
 
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export EDITOR="$(which nvim)"
 export VISUAL="$EDITOR"
-export TERM=xterm-kitty
-export TERMINAL=$TERM
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
@@ -28,8 +27,6 @@ setopt appendhistory sharehistory hist_ignore_space incappendhistory hist_ignore
 setopt auto_param_slash
 setopt no_case_glob no_case_match
 setopt globdots
-
-eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/catppuccin_mocha.omp.toml)"
 
 zle-line-init() {
   echo -ne '\e[5 q'
@@ -71,6 +68,8 @@ alias clear=" clear"
 alias exit=" exit"
 alias pwd=" pwd"
 alias neofetch=" fastfetch"
+alias neomatrix="neo-matrix --colorfile="$HOME/.config/colorfile.txt" --chars=0x21,0x7E,0x21,0x7E,0x30A0,0x30FF -d 0.5"
+alias pyvenv="[ -d .venv ] || python -m venv .venv; source .venv/bin/activate"
 
 y() {
     local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -102,3 +101,4 @@ bindkey "^P" history-beginning-search-backward
 bindkey "^N" history-beginning-search-forward
 
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/catppuccin_mocha.omp.toml)"

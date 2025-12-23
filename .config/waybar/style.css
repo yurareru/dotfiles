@@ -27,7 +27,8 @@ menu,
 #temperature,
 #custom-hwmonitor,
 #custom-archlaunch,
-#custom-wlogout {
+#custom-wlogout,
+#custom-swaync {
   background: rgba(30, 30, 46, 0.7);
   /* background: @base; */
   padding: 0px 10px;
@@ -48,7 +49,7 @@ menu,
 #workspaces button {
   padding: 5px 10px;
   border-radius: 10px;
-  color: @surface0;
+  color: alpha(@pink, .3);
 }
 
 #workspaces button.active {
@@ -121,9 +122,10 @@ menu,
   color: @lavender;
 }
 
-#custom-wlogout {
+#custom-wlogout,
+#custom-swaync {
   border-radius: 10px;
   margin: 10px 20px 0 5px;
-  padding: 0 16px 0 16px;
+  padding: 0 16px 0 14px;
   color: @red;
 }

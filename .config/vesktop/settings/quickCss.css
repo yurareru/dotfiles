@@ -1,18 +1,13 @@
 @import url("https://scattagain.github.io/VencordStuff/css/GuildbarRevert.css");
-@import url('https://raw.githubusercontent.com/surgedevs/visual-refresh-compact-title-bar/refs/heads/main/desktop.css');
-@import url("https://catppuccin.github.io/discord/dist/catppuccin-mocha-pink.theme.css");
-
-/* https://github.com/catppuccin/discord/issues/407 */
-button[class*=" primary__"] {
-  background-color: var(--button-filled-brand-background);
-  color: var(--button-filled-brand-text);
-}
+@import url("https://raw.githubusercontent.com/surgedevs/visual-refresh-compact-title-bar/refs/heads/main/desktop.css");
+/* @import url("https://catppuccin.github.io/discord/dist/catppuccin-mocha-pink.theme.css"); */
+@import url("https://cxntered.github.io/discord/dist/catppuccin-mocha-pink.theme.css");
 
 /*
  * Don't cover server list with panel/Revert user panel area
  * https://discord.com/channels/1015060230222131221/1028106818368589824/1354331484831354952
  */
-.visual-refresh section.panels_c48ade {
+[aria-label="User area"] {
   left: calc(var(--custom-guild-list-width) + var(--space-xs));
   width: calc(100% - var(--custom-guild-list-width) - var(--space-xs)*2);
   box-sizing: content-box;
@@ -21,73 +16,15 @@ button[class*=" primary__"] {
     padding: 0;
   }
 
-  /* GameActivityToggle Fix (delete if you don't use) */
-  .container__37e49 {
-    padding: var(--space-xxs);
-    gap: var(--space-4);
-
-    >.buttons__37e49 {
-      gap: 0;
-    }
-
-    >.avatarWrapper__37e49 {
-      min-width: 32px !important;
-
-      >.avatar__37e49 {
-        scale: 0.9;
-      }
-    }
+  >[class^="wrapper_"]>[class^="container_"] {
+    padding-top: 1em !important;
   }
 }
 
-nav.guilds_c48ade {
+nav[aria-label="Servers sidebar"] {
   margin-bottom: 0 !important;
 }
 
-.sidebar_c48ade:after {
-  display: none;
-}
-
-/*
- * Detailed Timestamp
- * https://discord.com/channels/1015060230222131221/1028106818368589824/1354458308714696816
- */
-span[class*="timestampInline_"] time::before {
-  content: attr(aria-label);
-  font-size: 12px;
-}
-
-span[class*="timestampInline_"] {
-  font-size: 0px !important;
-}
-
-/*
- * Make discord actually usable on low width windows
- * https://discord.com/channels/1015060230222131221/1028106818368589824/1274525352441548893 
- */
-@media (max-width: 1100px) {
-  [class*="sidebar_"] {
-    width: 200px;
-
-    .vc-typing-indicator,
-    .vc-channelemojis-emoji,
-    [class*="guildIconV2Container_"] {
-      display: none;
-    }
-
-    [class*="containerDefault_"] {
-      [role="img"] {
-        display: none;
-      }
-    }
-  }
-
-  [class*="chat_"] {
-    [class*="membersWrap_"] {
-      display: none;
-    }
-  }
-}
 
 /* Remove notification badge in Discord logo */
 [class^="tutorialContainer_"] [class^="listItemWrapper_"]>[class^="wrapper_"] {
@@ -120,6 +57,7 @@ ul[aria-label="Direct Messages"] {
     }
 
     &:has(a[href="/shop"]),
+    &:has(a[href="/quest-home"]),
     &:has(a[href="/message-requests"]) {
       order: 0;
     }
@@ -130,7 +68,7 @@ ul[aria-label="Direct Messages"] {
     &:has(div[aria-label^="aya"]) {
       order: 0;
 
-      div[class^="name"] {
+      div[class*="name"] {
         color: #ff66ab;
       }
     }
@@ -138,16 +76,16 @@ ul[aria-label="Direct Messages"] {
 }
 
 /* Pin Aya in friend list */
-[class^="peopleList_"]>div {
+[class*="peopleColumn"]>[class*="peopleList"] > div {
   display: grid;
 
-  [class^=peopleListItem] {
+  [class*="peopleListItem"] {
     order: 1;
 
     &:has(div[aria-label^="aya"]) {
       order: 0;
 
-      span[class^="username_"] {
+      span[class$="username"] {
         color: #ff66ab;
       }
     }
@@ -167,29 +105,30 @@ a:has([aria-label="Help"]) {
 }
 
 /* Smaller VC indicator */
-[class^=member],
+[aria-label="Members"],
 ul[aria-label="Direct Messages"] {
   .vc-platform-indicator {
     flex-direction: column;
     margin-left: 0px !important;
 
-    >svg {
+    >img {
       height: 12px;
     }
   }
 }
 
 /* Remove quick react bar */
-.button_f7ecac.hoverBarButton_f84418:nth-of-type(1),
-.button_f7ecac.hoverBarButton_f84418:nth-of-type(2),
-.button_f7ecac.hoverBarButton_f84418:nth-of-type(3),
-.separator_f84418 {
+span:has([aria-label*="Click to react with"])  {
+  ~ [class^="separator_"] {
+    display: none;
+  }
   display: none;
 }
 
+
 /* Remove activity in member list */
-[class*='membersGroup']:has([role=button]),
-[class*='member'] [class*='container']:has([class*='badges']) {
+[class*="membersGroup"]:has([role=button]),
+[class*="member"] [class*="container"]:has([class*="badges"]) {
   display: none;
 }
 
@@ -238,5 +177,13 @@ ul[aria-label="Channels"] {
 /* move stuffs in toolbar to right */
 section[aria-label="Channel header"],
 [aria-label="Friends"]>section {
-  padding-right: 0.5em !important;
+  padding-right: 2em !important;
+}
+
+[class^="topControls_"] [class^="subtitleContainer_"] {
+  padding-right: 0 !important;
+
+  section {
+    padding-right: 2em !important;
+  }
 }
