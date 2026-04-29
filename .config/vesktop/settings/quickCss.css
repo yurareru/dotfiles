@@ -1,7 +1,6 @@
 @import url("https://scattagain.github.io/VencordStuff/css/GuildbarRevert.css");
 @import url("https://raw.githubusercontent.com/surgedevs/visual-refresh-compact-title-bar/refs/heads/main/desktop.css");
-/* @import url("https://catppuccin.github.io/discord/dist/catppuccin-mocha-pink.theme.css"); */
-@import url("https://cxntered.github.io/discord/dist/catppuccin-mocha-pink.theme.css");
+@import url("https://catppuccin.github.io/discord/dist/catppuccin-mocha-pink.theme.css");
 
 /*
  * Don't cover server list with panel/Revert user panel area
@@ -69,14 +68,15 @@ ul[aria-label="Direct Messages"] {
       order: 0;
 
       div[class*="name"] {
-        color: #ff66ab;
+        /* color: #ff66ab; */
+        color: var(--text-brand);
       }
     }
   }
 }
 
 /* Pin Aya in friend list */
-[class*="peopleColumn"]>[class*="peopleList"] > div {
+[class*="peopleColumn"]>[class*="peopleList"]>div {
   display: grid;
 
   [class*="peopleListItem"] {
@@ -86,7 +86,8 @@ ul[aria-label="Direct Messages"] {
       order: 0;
 
       span[class$="username"] {
-        color: #ff66ab;
+        /* color: #ff66ab; */
+        color: var(--text-brand);
       }
     }
   }
@@ -111,17 +112,18 @@ ul[aria-label="Direct Messages"] {
     flex-direction: column;
     margin-left: 0px !important;
 
-    >img {
+    >svg {
       height: 12px;
     }
   }
 }
 
 /* Remove quick react bar */
-span:has([aria-label*="Click to react with"])  {
-  ~ [class^="separator_"] {
+span:has([aria-label*="Click to react with"]) {
+  ~[class^="separator_"] {
     display: none;
   }
+
   display: none;
 }
 

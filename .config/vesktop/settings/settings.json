@@ -313,9 +313,6 @@
             "ignoreChannels": "",
             "ignoreGuilds": ""
         },
-        "MessageTags": {
-            "enabled": false
-        },
         "MutualGroupDMs": {
             "enabled": false
         },
@@ -617,6 +614,12 @@
         },
         "NoticesAPI": {
             "enabled": true
+        },
+        "MoreQuickReactions": {
+            "enabled": false
+        },
+        "CustomCommands": {
+            "enabled": false
         }
     },
     "notifications": {
@@ -629,7 +632,7 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1766219270882
+        "settingsSyncVersion": 1773573953648
     },
     "uiElements": {
         "chatBarButtons": {},

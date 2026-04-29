@@ -7,6 +7,7 @@ path_prepend() {
 path_prepend "$HOME/.local/share/pnpm" \
     "$HOME/.local/share/bob/nvim-bin" \
     "$HOME/.local/bin" \
+    "$HOME/.cargo/bin" \
     "$HOME/go/bin"
 
 export PNPM_HOME="$HOME/.local/share/pnpm"
@@ -68,6 +69,7 @@ alias clear=" clear"
 alias exit=" exit"
 alias pwd=" pwd"
 alias neofetch=" fastfetch"
+alias kys="pkill -9"
 alias neomatrix="neo-matrix --colorfile="$HOME/.config/colorfile.txt" --chars=0x21,0x7E,0x21,0x7E,0x30A0,0x30FF -d 0.5"
 alias pyvenv="[ -d .venv ] || python -m venv .venv; source .venv/bin/activate"
 

@@ -3,6 +3,10 @@
   --toolbarbutton-icon-fill-attention: #F5C2E7 !important;
 }
 
+.browserContainer {
+  background: transparent !important;
+}
+
 .titlebar-buttonbox-container,
 #alltabs-button {
   display: none;
