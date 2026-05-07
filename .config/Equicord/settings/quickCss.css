@@ -1,35 +1,10 @@
-@import url("https://scattagain.github.io/VencordStuff/css/GuildbarRevert.css");
-@import url("https://raw.githubusercontent.com/surgedevs/visual-refresh-compact-title-bar/refs/heads/main/desktop.css");
 @import url("https://catppuccin.github.io/discord/dist/catppuccin-mocha-pink.theme.css");
 
-/*
- * Don't cover server list with panel/Revert user panel area
- * https://discord.com/channels/1015060230222131221/1028106818368589824/1354331484831354952
- */
-[aria-label="User area"] {
-  left: calc(var(--custom-guild-list-width) + var(--space-xs));
-  width: calc(100% - var(--custom-guild-list-width) - var(--space-xs)*2);
-  box-sizing: content-box;
-
-  .actionButtons_e131a9 button {
-    padding: 0;
-  }
-
-  >[class^="wrapper_"]>[class^="container_"] {
-    padding-top: 1em !important;
-  }
-}
-
-nav[aria-label="Servers sidebar"] {
-  margin-bottom: 0 !important;
-}
-
-
-/* Remove notification badge in Discord logo */
+/* Remove pending notification badge */
 [class^="tutorialContainer_"] [class^="listItemWrapper_"]>[class^="wrapper_"] {
   >svg>foreignObject {
     mask: none;
-    border-radius: 1rem;
+    border-radius: 0.75rem;
   }
 
   [class^="lowerBadge_"] {
@@ -37,37 +12,41 @@ nav[aria-label="Servers sidebar"] {
   }
 }
 
+a[href="/channels/@me"]>div[class^="numberBadge_"] {
+  display: none;
+}
+
+div[aria-label^="Pending, "]>div {
+  display: none;
+}
+
+
 /* DM list tweaks */
 ul[aria-label="Direct Messages"] {
-  display: grid;
-  margin-top: -32px;
-  grid-template-rows: repeat(auto-fill, minmax(40px, 1fr));
+  display: flex;
+  flex-direction: column;
 
-  /* Remove Play Again */
-  >div:has(h2) {
+  >h2 {
+    flex: 0 auto;
+  }
+
+  /* Remove useless shit */
+  >div:has(a[href="/store"]) {
+    display: none;
+  }
+
+  li:has(a[href="/shop"]) {
     display: none;
   }
 
   >li {
-
-    /* Remove useless shit */
-    &:has(a[href="/store"]) {
-      display: none;
-    }
-
-    &:has(a[href="/shop"]),
-    &:has(a[href="/quest-home"]),
-    &:has(a[href="/message-requests"]) {
-      order: 0;
-    }
-
     order: 1;
 
     /* Pin Aya's DM <3 */
     &:has(div[aria-label^="aya"]) {
       order: 0;
 
-      div[class*="name"] {
+      div[class^="nameAndDecorators"] {
         /* color: #ff66ab; */
         color: var(--text-brand);
       }
@@ -77,15 +56,17 @@ ul[aria-label="Direct Messages"] {
 
 /* Pin Aya in friend list */
 [class*="peopleColumn"]>[class*="peopleList"]>div {
-  display: grid;
+  display: flex;
+  flex-direction: column;
 
   [class*="peopleListItem"] {
     order: 1;
+    border-top: 1px solid var(--border-subtle);
 
     &:has(div[aria-label^="aya"]) {
       order: 0;
 
-      span[class$="username"] {
+      span[class^="username"] {
         /* color: #ff66ab; */
         color: var(--text-brand);
       }
@@ -98,7 +79,6 @@ ul[aria-label="Direct Messages"] {
 [class^="channelAppLauncher_"] {
   display: none !important;
 }
-
 
 /* Remove help button in top bar */
 a:has([aria-label="Help"]) {
@@ -136,6 +116,9 @@ span:has([aria-label*="Click to react with"]) {
 
 /* Channel list tweaks */
 ul[aria-label="Channels"] {
+  display: flex;
+  flex-direction: column;
+
   >[class^="sectionDivider_"] {
     display: none;
   }
@@ -161,31 +144,24 @@ ul[aria-label="Channels"] {
     svg[class^=icon] {
       width: 16px;
       height: 16px;
-      top: 4px;
+      bottom: 4px;
+      left: 0px;
     }
   }
 }
 
 /* Center server name */
 [class^="headerContent"] {
-  h2 {
-    color: white;
-    text-align: center;
-    width: 100%;
-    font-weight: 700;
+  >span {
+    display: none;
   }
-}
 
-/* move stuffs in toolbar to right */
-section[aria-label="Channel header"],
-[aria-label="Friends"]>section {
-  padding-right: 2em !important;
-}
+  >div {
+    width: 100%;
 
-[class^="topControls_"] [class^="subtitleContainer_"] {
-  padding-right: 0 !important;
-
-  section {
-    padding-right: 2em !important;
+    h2 {
+      text-align: center;
+      width: 100%;
+    }
   }
 }

@@ -10,7 +10,6 @@ base
 base-devel
 bat
 bc
-blueberry
 blueman
 bluez-utils
 bob
@@ -68,6 +67,7 @@ linux
 linux-firmware
 linux-headers
 ly
+lzip
 man-db
 mangohud
 mediainfo

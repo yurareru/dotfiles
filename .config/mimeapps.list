@@ -23,8 +23,6 @@ video/x-matroska=mpv.desktop
 video/x-msvideo=mpv.desktop
 
 x-scheme-handler/about=librewolf.desktop
-x-scheme-handler/discord=vesktop.desktop
-x-scheme-handler/discord-1216669957799018608=discord-1216669957799018608.desktop
 x-scheme-handler/http=librewolf.desktop
 x-scheme-handler/https=librewolf.desktop
 x-scheme-handler/unknown=librewolf.desktop
