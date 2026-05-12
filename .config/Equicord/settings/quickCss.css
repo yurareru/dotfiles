@@ -71,6 +71,16 @@ ul[aria-label="Direct Messages"] {
         color: var(--text-brand);
       }
     }
+
+    [class^="subtext_"] {
+      display: none;
+    }
+
+    &:hover [class^="subtext_"],
+    & [class^="subtext_"]:has([aria-label^="Playing"]),
+    & [class^="subtext_"]:has([aria-label^="Listening"]) {
+      display: block;
+    }
   }
 }
 
