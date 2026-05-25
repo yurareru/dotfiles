@@ -1128,7 +1128,10 @@
         },
         "VoiceRejoin": {
             "enabled": true,
-            "rejoinDelay": 2
+            "rejoinDelay": 2,
+            "preventReconnectIfCallEnded": "both",
+            "rejoinTimeout": 30,
+            "applyOnlyToDms": false
         },
         "WaitForSlot": {
             "enabled": false
@@ -1202,6 +1205,15 @@
         },
         "VoiceStats": {
             "enabled": false
+        },
+        "DownloadAllAttachments": {
+            "enabled": false
+        },
+        "MarkdownTables": {
+            "enabled": false
+        },
+        "FakeDeafen": {
+            "enabled": false
         }
     },
     "uiElements": {
@@ -1219,8 +1231,9 @@
         "authenticated": false,
         "url": "https://cloud.equicord.org/",
         "settingsSync": false,
-        "settingsSyncVersion": 1778560136032
+        "settingsSyncVersion": 1779695207927
     },
     "ignoreResetWarning": false,
-    "userCssVars": {}
+    "userCssVars": {},
+    "windowsMaterial": "none"
 }

@@ -5,6 +5,8 @@ catppuccin-gtk-theme-mocha
 cbonsai
 davinci-resolve
 droidcam-obs-plugin
+firefox-nightly-bin
+heroic-games-launcher-bin
 inkscape-bin
 jdk17-graalvm-bin
 jdk21-graalvm-bin
@@ -14,6 +16,7 @@ librewolf-bin
 mcpelauncher-linux
 mcpelauncher-ui
 neo-matrix
+ntfsprogs-plus
 onlyoffice-bin
 opentabletdriver
 osu-lazer-bin
@@ -21,13 +24,12 @@ otf-vollkorn
 polychromatic
 protonplus
 python-libnacl
-qt6ct-kde
+rofi-git
 samrewritten-git
 steamcmd
-sunshine-bin
 timeshift-autosnap
 ttf-twemoji
 tty-clock
-vesktop-bin
+waybar-git
 wlogout
 yay

@@ -42,19 +42,22 @@ ul[aria-label="Direct Messages"] {
   >li {
     order: 1;
 
-    /* Pin Aya's DM <3 */
-    &:has(div[aria-label^="aya"]) {
+    &:has(a[href="/message-requests"]) {
+      order: 0;
+    }
+
+    /* Pin Aya's DM */
+    &:has(div[aria-label^="ayaaais"]) {
       order: 0;
 
       div[class^="nameAndDecorators"] {
-        /* color: #ff66ab; */
         color: var(--text-brand);
       }
     }
   }
 }
 
-/* Pin Aya in friend list */
+/* Friend lists tweaks */
 [class*="peopleColumn"]>[class*="peopleList"]>div {
   display: flex;
   flex-direction: column;
@@ -63,30 +66,32 @@ ul[aria-label="Direct Messages"] {
     order: 1;
     border-top: 1px solid var(--border-subtle);
 
-    &:has(div[aria-label^="aya"]) {
+    /* Pin Aya */
+    &:has(div[aria-label^="ayaaais"]) {
       order: 0;
 
       span[class^="username"] {
-        /* color: #ff66ab; */
         color: var(--text-brand);
       }
     }
 
+    /* Hide statuses except rich presence*/
     [class^="subtext_"] {
       display: none;
+
+      &:has(svg) {
+        display: block;
+      }
     }
 
-    &:hover [class^="subtext_"],
-    & [class^="subtext_"]:has([aria-label^="Playing"]),
-    & [class^="subtext_"]:has([aria-label^="Listening"]) {
+    &:hover [class^="subtext_"] {
       display: block;
     }
   }
 }
 
 /* Remove shit in message bar */
-[aria-label="Send a gift"],
-[class^="channelAppLauncher_"] {
+[aria-label="Send a gift"] {
   display: none !important;
 }
 
@@ -95,7 +100,7 @@ a:has([aria-label="Help"]) {
   display: none;
 }
 
-/* Smaller VC indicator */
+/* Smaller VC indicator (plugin) */
 [aria-label="Members"],
 ul[aria-label="Direct Messages"] {
   .vc-platform-indicator {
@@ -124,7 +129,23 @@ span:has([aria-label*="Click to react with"]) {
   display: none;
 }
 
-/* Channel list tweaks */
+/* Center server name */
+[class^="headerContent"] {
+  >span {
+    display: none;
+  }
+
+  >div {
+    width: 100%;
+
+    h2 {
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+
+/* Channel lists tweaks */
 ul[aria-label="Channels"] {
   display: flex;
   flex-direction: column;
@@ -156,22 +177,6 @@ ul[aria-label="Channels"] {
       height: 16px;
       bottom: 4px;
       left: 0px;
-    }
-  }
-}
-
-/* Center server name */
-[class^="headerContent"] {
-  >span {
-    display: none;
-  }
-
-  >div {
-    width: 100%;
-
-    h2 {
-      text-align: center;
-      width: 100%;
     }
   }
 }

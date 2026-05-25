@@ -29,7 +29,7 @@
     },
     "hyprland/workspaces": {
         "format": "{icon}",
-        // "all-outputs": true,
+        //"all-outputs": true,
         "sort-by-number": true,
         "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'",
         "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
@@ -103,8 +103,9 @@
     "custom/hwmonitor": {
         "interval": 4,
         "exec": "$HOME/.config/waybar/scripts/hwmonitor.sh",
-        "on-click": "$HOME/.config/waybar/scripts/hwmonitor.sh next",
-        "on-click-right": "$HOME/.config/waybar/scripts/hwmonitor.sh prev",
+        "on-click": "pkill btop || setsid kitty btop",
+        "on-scroll-up": "$HOME/.config/waybar/scripts/hwmonitor.sh next",
+        "on-scroll-down": "$HOME/.config/waybar/scripts/hwmonitor.sh prev",
         "tooltip": false,
     },
     "custom/wlogout": {

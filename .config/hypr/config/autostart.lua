@@ -4,10 +4,12 @@
 
 -- See https://wiki.hypr.land/Configuring/Basics/Autostart/
 
+local exec = hl.exec_cmd
+
 hl.on("hyprland.start", function()
-	hl.exec_cmd("waybar")
-	hl.exec_cmd("hyprpaper")
-	hl.exec_cmd("udiskie")
-	hl.exec_cmd("wl-paste --watch cliphist store")
-	hl.exec_cmd("xrandr --output DP-1 --primary")
+	exec("waybar")
+	exec("hyprpaper")
+	exec("udiskie")
+	exec("wl-paste --watch cliphist store")
+	exec("xrandr --output DP-1 --primary")
 end)

@@ -26,7 +26,7 @@ setopt no_case_glob no_case_match
 setopt globdots
 
 zle-line-init() {
-  echo -ne '\e[5 q'
+    echo -ne '\e[5 q'
 }
 zle -N zle-line-init
 
@@ -68,6 +68,11 @@ alias neofetch=" fastfetch"
 alias kys="pkill -9"
 alias neomatrix="neo-matrix --colorfile="$HOME/.config/colorfile.txt" --chars=0x21,0x7E,0x21,0x7E,0x30A0,0x30FF -d 0.5"
 alias pyvenv="[ -d .venv ] || python -m venv .venv; source .venv/bin/activate"
+
+hyprctl() {
+    local sig=$(command ls -t "$XDG_RUNTIME_DIR/hypr/" 2>/dev/null | head -1)
+    HYPRLAND_INSTANCE_SIGNATURE=$sig command hyprctl "$@"
+}
 
 y() {
     local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd

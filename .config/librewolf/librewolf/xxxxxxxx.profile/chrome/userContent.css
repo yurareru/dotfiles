@@ -41,29 +41,34 @@
 }
 
 @-moz-document url("about:newtab"), url("about:home") {
-  body {
-    --newtab-background-color-secondary: transparent !important;
+
+  .logo-and-wordmark {
+    gap: 12px;
+    align-items: center !important;
+
+    .logo {
+      background: center / contain url("librewolf.svg") !important;
+    }
+
+    .wordmark {
+      display: none !important;
+    }
   }
 
-  .personalizeButtonWrapper,
-  .logo-and-wordmark,
+
+  .logo-and-wordmark::after {
+    content: "LibreWolf";
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+  }
+
+  .personalizeButtonWrapper {
+    display: none;
+  }
+
   #searchSuggestionTable {
     display: none !important;
-  }
-
-  .non-collapsible-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 75vh
-  }
-
-  .search-inner-wrapper {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(8px);
-    border: 2px solid rgba(245, 194, 231, 0.6);
   }
 }
 
