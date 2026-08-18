@@ -16,6 +16,7 @@
         "network",
         "pulseaudio",
         "pulseaudio#microphone",
+        "battery",
         "custom/swaync",
     ],
     "hyprland/window": {
@@ -81,6 +82,15 @@
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "Disconnected ⚠",
         "min-length": 22,
+    },
+    "battery": {
+        "bat": "BAT1",
+        "interval": 4,
+        "format": "{icon} {capacity}%",
+        "format-icons": {
+            "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+            "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
+        },
     },
     "cpu": {
         "interval": 2,

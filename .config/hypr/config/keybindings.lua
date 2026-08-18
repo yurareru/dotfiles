@@ -4,6 +4,8 @@
 
 -- see https://wiki.hypr.land/Configuring/Basics/Binds/
 
+local utils = require("utils")
+
 -- Programs
 local terminal = "kitty"
 local file_manager = "nemo"
@@ -29,10 +31,13 @@ bind("SUPER + SHIFT + N", exec(notification_center))
 bind("SUPER + SHIFT + C", exec(color_picker))
 
 bind("F11", hl.dsp.window.fullscreen())
-bind("SUPER + F11", hl.dsp.window.fullscreen({ mode = "maximized" }))
+bind("SUPER + F11", hl.dsp.window.fullscreen { mode = "maximized" })
 bind("SUPER + W", hl.dsp.window.close())
+bind("SUPER + C", hl.dsp.window.center())
+bind("Pause", exec("wl-freeze -a"))
+bind("SUPER + Pause", hl.dsp.window.kill())
 
-bind("SUPER + F", hl.dsp.window.float({ action = "toggle" }))
+bind("SUPER + F", hl.dsp.window.float { action = "toggle" })
 bind("SUPER + P", hl.dsp.window.pseudo())
 bind("SUPER + S", hl.dsp.layout("togglesplit"))
 
@@ -43,9 +48,10 @@ bind("SUPER + F12", exec(grimblast .. " copysave output " .. screenshot_template
 
 bind("CTRL + ALT + DELETE", exec("pkill wlogout || wlogout"))
 bind("SUPER + SHIFT + DELETE", hl.dsp.exit())
-bind("SUPER + SHIFT + R", exec("pkill waybar; hyprctl reload; waybar"))
+bind("SUPER + SHIFT + R", exec("hyprctl reload"))
 
 bind("SUPER + Z", exec("pamixer --default-source -t"))
+bind("SUPER + Tab", utils.toggle_layout)
 
 local directions = {
 	{ "left", "H", -10, 0 },
@@ -60,9 +66,9 @@ for _, pair in ipairs(directions) do
 	local x = pair[3]
 	local y = pair[4]
 
-	local focus = hl.dsp.focus({ direction = direction })
-	local move = hl.dsp.window.move({ direction = direction })
-	local resize = hl.dsp.window.resize({ x = x, y = y, relative = true })
+	local focus = hl.dsp.focus { direction = direction }
+	local move = hl.dsp.window.move { direction = direction }
+	local resize = hl.dsp.window.resize { x = x, y = y, relative = true }
 
 	bind("SUPER + " .. direction, focus)
 	bind("SUPER + " .. key, focus)
@@ -76,21 +82,22 @@ end
 
 for i = 1, 10 do
 	local key = i % 10
-	bind("SUPER + " .. key, hl.dsp.focus({ workspace = i }))
-	bind("SUPER + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+	bind("SUPER + " .. key, hl.dsp.focus { workspace = i })
+	bind("SUPER + SHIFT + " .. key, hl.dsp.window.move { workspace = i })
 end
 
-bind("SUPER + SHIFT + ALT + left", hl.dsp.workspace.move({ monitor = "-1" }))
-bind("SUPER + SHIFT + ALT + H", hl.dsp.workspace.move({ monitor = "-1" }))
-bind("SUPER + SHIFT + ALT + right", hl.dsp.workspace.move({ monitor = "+1" }))
-bind("SUPER + SHIFT + ALT + L", hl.dsp.workspace.move({ monitor = "+1" }))
+bind("SUPER + SHIFT + ALT + left", hl.dsp.workspace.move { monitor = "-1" })
+bind("SUPER + SHIFT + ALT + H", hl.dsp.workspace.move { monitor = "-1" })
+bind("SUPER + SHIFT + ALT + right", hl.dsp.workspace.move { monitor = "+1" })
+bind("SUPER + SHIFT + ALT + L", hl.dsp.workspace.move { monitor = "+1" })
 
-bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-bind("SUPER + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
+bind("SUPER + mouse_down", hl.dsp.focus { workspace = "e+1" })
+bind("SUPER + mouse_up", hl.dsp.focus { workspace = "e-1" })
 
 bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
 bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
+bind("XF86Sleep", exec("pkill wlogout || wlogout"), { locked = true })
 bind(
 	"XF86AudioRaiseVolume",
 	exec("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),

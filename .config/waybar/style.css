@@ -25,6 +25,7 @@ menu,
 #cpu,
 #memory,
 #temperature,
+#battery,
 #custom-hwmonitor,
 #custom-archlaunch,
 #custom-wlogout,
@@ -74,13 +75,6 @@ menu,
   margin: 10px 10px 0px 10px;
 }
 
-#custom-archlaunch {
-  border-radius: 10px;
-  margin: 10px 5px 0 20px;
-  padding: 0 16px 0 13px;
-  color: @pink;
-}
-
 #clock {
   margin: 10px 10px 0 10px;
   border-radius: 10px;
@@ -102,6 +96,12 @@ menu,
   color: @mauve;
 }
 
+#battery {
+  border-radius: 10px;
+  margin: 10px 5px 0 5px;
+  color: @lavender;
+}
+
 #cpu {
   border-radius: 10px 0 0 10px;
   color: @lavender;
@@ -114,6 +114,13 @@ menu,
 #memory {
   padding-left: 30px;
   color: @lavender;
+}
+
+#custom-archlaunch {
+  border-radius: 10px;
+  margin: 10px 0px 0 20px;
+  padding: 0 16px 0 13px;
+  color: @pink;
 }
 
 #custom-hwmonitor {

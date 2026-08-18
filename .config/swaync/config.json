@@ -97,18 +97,6 @@
         {
           "label": "󰐥",
           "command": "swaync-client -cp; wlogout"
-        },
-        {
-          "label": "󰂶",
-          "command": "x=$(hyprctl getoption decoration:blur:enabled | grep 'int' | cut -d' ' -f2); if [ $x -eq 1 ]; then hyprctl keyword decoration:blur:enabled false; notify-send '󰂶 Blur disabled' -a 'Hyprland'; else hyprctl keyword decoration:blur:enabled true; notify-send '󰂶 Blur enabled' -a 'Hyprland'; fi;"
-        },
-        {
-          "label": "󰘷",
-          "command": "x=$(hyprctl getoption decoration:shadow:enabled | grep 'int' | cut -d' ' -f2); if [ $x -eq 1 ]; then hyprctl keyword decoration:shadow:enabled false; notify-send '󰘷 Shadow disabled' -a 'Hyprland'; else hyprctl keyword decoration:shadow:enabled true; notify-send '󰘷 Shadow enabled' -a 'Hyprland'; fi"
-        },
-        {
-          "label": "󰤺",
-          "command": "x=$(hyprctl getoption animations:enabled | grep 'int' | cut -d' ' -f2); if [ $x -eq 1 ]; then hyprctl keyword animations:enabled false; notify-send '󰤺 Animation disabled' -a 'Hyprland'; else hyprctl keyword animations:enabled true; notify-send '󰤺 Animation enabled' -a 'Hyprland'; fi"
         }
       ]
     }

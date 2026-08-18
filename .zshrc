@@ -47,7 +47,6 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions 
 zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light akash329d/zsh-alias-finder
-zinit light mattmc3/zsh-safe-rm
 
 zinit snippet OMZP::fzf
 zinit snippet OMZL::git.zsh
@@ -62,6 +61,7 @@ alias grep="grep --color=auto"
 alias neovide="neovide --neovim-bin $(which nvim)"
 alias zshrc="${=EDITOR} ~/.zshrc"
 alias clear=" clear"
+alias c=" clear"
 alias exit=" exit"
 alias pwd=" pwd"
 alias neofetch=" fastfetch"
@@ -72,6 +72,10 @@ alias pyvenv="[ -d .venv ] || python -m venv .venv; source .venv/bin/activate"
 hyprctl() {
     local sig=$(command ls -t "$XDG_RUNTIME_DIR/hypr/" 2>/dev/null | head -1)
     HYPRLAND_INSTANCE_SIGNATURE=$sig command hyprctl "$@"
+}
+
+n() {
+    setsid nemo . > /dev/null 2>&1 &
 }
 
 y() {

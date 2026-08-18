@@ -4,3 +4,4 @@
 pacman.list
 aur.list
 export_packages.sh
+.qmlls.ini

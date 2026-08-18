@@ -1,13 +1,14 @@
-require("config.monitors")
-require("config.autostart")
-require("config.env")
-require("config.keybindings")
-require("config.animations")
-require("config.rules")
+require "config.monitors"
+require "config.autostart"
+require "config.env"
+require "config.keybindings"
+require "config.animations"
+require "config.rules"
+require "config.gestures"
 
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 
-hl.config({
+hl.config {
 	general = {
 		gaps_in = 5,
 		gaps_out = 20,
@@ -22,7 +23,7 @@ hl.config({
 		resize_on_border = false,
 		allow_tearing = false,
 
-		layout = "dwindle",
+		layout = "scrolling",
 	},
 
 	decoration = {
@@ -77,13 +78,13 @@ hl.config({
 		repeat_rate = 40,
 
 		touchpad = {
-			natural_scroll = false,
+			natural_scroll = true,
+			disable_while_typing = false,
 		},
 	},
-})
+}
 
-hl.gesture({
-	fingers = 3,
-	direction = "horizontal",
-	action = "workspace",
-})
+hl.device {
+	name = "asuf1203:00-2808:0217-touchpad",
+	sensitivity = -0.2,
+}

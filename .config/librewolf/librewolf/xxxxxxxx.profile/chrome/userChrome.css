@@ -12,13 +12,13 @@
   display: none;
 }
 
-#browser,
-#main-window {
+#main-window>body {
   background: none !important;
 }
 
 #tabbrowser-tabpanels {
   background: rgba(32, 32, 50, 0.8) !important;
+  /* border-radius: 12px !important; */
 }
 
 #navigator-toolbox {

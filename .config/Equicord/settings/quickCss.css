@@ -23,13 +23,6 @@ div[aria-label^="Pending, "]>div {
 
 /* DM list tweaks */
 ul[aria-label="Direct Messages"] {
-  display: flex;
-  flex-direction: column;
-
-  >h2 {
-    flex: 0 auto;
-  }
-
   /* Remove useless shit */
   >div:has(a[href="/store"]) {
     display: none;
@@ -40,19 +33,13 @@ ul[aria-label="Direct Messages"] {
   }
 
   >li {
-    order: 1;
-
-    &:has(a[href="/message-requests"]) {
-      order: 0;
+    /* Remove pin icon */
+    div[class^="iconsContainer"] {
+      display: none;
     }
-
-    /* Pin Aya's DM */
-    &:has(div[aria-label^="ayaaais"]) {
-      order: 0;
-
-      div[class^="nameAndDecorators"] {
-        color: var(--text-brand);
-      }
+    /* Recolor Aya's DM */
+    &:has(div[aria-label^="ayaaais"]) div[class^="nameAndDecorators"] {
+      color: var(--text-brand);
     }
   }
 }

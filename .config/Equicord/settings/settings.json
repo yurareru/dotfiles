@@ -281,9 +281,6 @@
         "KeepCurrentChannel": {
             "enabled": false
         },
-        "LastFMRichPresence": {
-            "enabled": false
-        },
         "LoadingQuotes": {
             "enabled": false
         },
@@ -385,7 +382,8 @@
             "enabled": false
         },
         "PermissionsViewer": {
-            "enabled": true
+            "enabled": true,
+            "permissionsSortOrder": 1
         },
         "PetPet": {
             "enabled": false
@@ -741,9 +739,6 @@
             "enabled": false
         },
         "FontLoader": {
-            "enabled": false
-        },
-        "ForwardAnywhere": {
             "enabled": false
         },
         "FrequentQuickSwitcher": {
@@ -1175,7 +1170,8 @@
             "disableAdoptTagPrompt": false,
             "jsonGateway": false,
             "noBulletPoints": false,
-            "accountStandingButton": false
+            "accountStandingButton": false,
+            "hideVoiceIndicatorForMutedChannels": false
         },
         "Settings": {
             "enabled": true,
@@ -1213,7 +1209,62 @@
             "enabled": false
         },
         "FakeDeafen": {
+            "enabled": true,
+            "showButton": true,
+            "enableKeybind": false,
+            "fakeMute": true,
+            "fakeDeafen": true
+        },
+        "BetterForwards": {
             "enabled": false
+        },
+        "BetterGifLoad": {
+            "enabled": false
+        },
+        "ClipUpload": {
+            "enabled": false
+        },
+        "GifMaker": {
+            "enabled": false
+        },
+        "LimitlessScreenshare": {
+            "enabled": false
+        },
+        "StopAutoUnread": {
+            "enabled": false
+        },
+        "MusicRichPresence": {
+            "enabled": false
+        },
+        "TenorGifSearch": {
+            "enabled": false
+        },
+        "SurfaceClassesAPI": {
+            "enabled": false
+        },
+        "AdvancedPermissions": {
+            "enabled": false
+        },
+        "SedEnhanced": {
+            "enabled": false
+        },
+        "ShowRolesInChat": {
+            "enabled": false
+        },
+        "AutoJumpToMessage": {
+            "enabled": false
+        },
+        "BadgeAPI": {
+            "enabled": true
+        },
+        "ContextMenuAPI": {
+            "enabled": true
+        },
+        "ExtraContextMenusAPI": {
+            "enabled": true
+        },
+        "NoticesAPI": {
+            "enabled": true
         }
     },
     "uiElements": {
@@ -1231,7 +1282,7 @@
         "authenticated": false,
         "url": "https://cloud.equicord.org/",
         "settingsSync": false,
-        "settingsSyncVersion": 1779695207927
+        "settingsSyncVersion": 1786934922459
     },
     "ignoreResetWarning": false,
     "userCssVars": {},

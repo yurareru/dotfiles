@@ -52,7 +52,7 @@ read -r used_mb total_mb < <(free -m | awk '/Mem:/ {print $3, $2}')
 used_gb=$(awk "BEGIN {printf \"%.2f\", $used_mb/1024}")
 total_gb=$(awk "BEGIN {printf \"%.2f\", $total_mb/1024}")
 ram_pct=$(awk "BEGIN {printf \"%.0f\", ($used_mb/$total_mb)*100}")
-ram_info="${used_gb}GB / ${total_gb}GB (${ram_pct}%%)"
+ram_info="${used_gb}GB / ${total_gb}GB (${ram_pct}%)"
 
 gpu=$(nvidia-smi --query-gpu=utilization.gpu,temperature.gpu,power.draw --format=csv,noheader,nounits)
 
